@@ -1,16 +1,57 @@
-# React + Vite
+1. JSX
+What it is: JavaScript XML. It's a mix of HTML and JavaScript.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Why use it: It lets you write familiar, easy-to-read HTML tags right inside your JavaScript code. It makes building the user interface (UI) much simpler.
 
-Currently, two official plugins are available:
+2.
+State:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Internal memory of a component.
 
-## React Compiler
+The data changes over time ( a counter going up, or a menu opening/closing).
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+It is managed inside the component.
 
-## Expanding the ESLint configuration
+Props (Properties):
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Like arguments passed to a function.
+
+Data passed from a parent component down to a child component.
+
+It is read-only (the child component cannot change it).
+
+
+3.
+
+What it is the useState Hook: A special function that gives a functional component the ability to have State (internal memory).
+
+How it works:
+
+You call it: const [count, setCount] = useState(0);
+
+It gives you two things: the current value (count) and a function to update it (setCount).
+
+When you call the update function (setCount), React re-renders the component with the new value.
+
+4.
+ Sharing State Between Components
+The Simple Way (Lifting State Up):
+
+You can't pass state sideways.
+
+You move the state from the individual components up to their closest shared parent.
+
+The parent then passes the data and the update function down to the children as Props.
+
+5. Event Handling
+How it works:
+
+It's like adding an onclick to an HTML element, but in React, you use camelCase (e.g., onClick, onChange).
+
+You pass a JavaScript function directly into the event attribute.
+
+Example:
+
+JavaScript
+const myClickFunction = () => {}; 
+    <button onClick={myClickFunction}>Click Me</button>
